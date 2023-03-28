@@ -1,0 +1,10 @@
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cancel Order</title>
+    </head>
+    <body>
+        <form name="cancelorder" action="delstudent.jsp" method="POST">
+            Enter student id to delete - <input type="text" name="studentid" id="studentid"><br>
+            <input type="submit" value="cancel" name="cancel" />
+        </form>
+    </body>

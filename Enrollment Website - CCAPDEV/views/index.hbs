@@ -1,0 +1,29 @@
+<div id="container">
+    <h1> PayApp </h1>
+
+    <div id="content">
+        <form id="payment_form">
+            <input type="text" name="name" id="name" class="field" placeholder="Name"> <br>
+            <input type="number" name="refno" id="refno" class="field" placeholder="Reference Number"> <br>
+            <input type="number" name="amount" id="amount" class="field" placeholder="Amount"> <br>
+            <input type="button" name="submit" id="submit" value="SUBMIT">
+        </form>
+
+        <p id="error"></p>
+
+        <!--
+            TODO: Display all transactions here. Each transaction should be retrieved from the database and displayed through rendering `../partials/card.hbs`.
+        -->
+        <!--handle bar statement to display all transactions from the database and display cards.hbs-->
+        <div id="transactions">
+            {{#each transactions}}
+            <div id = "card">   
+                <h2>{{name}}</h2>
+                <p>{{refno}}</p>
+                <p>{{amount}}</p>
+            </div>
+
+        
+        </div>
+    </div>
+</div>

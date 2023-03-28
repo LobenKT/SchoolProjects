@@ -1,0 +1,12 @@
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Delete Student</title>
+    </head>
+    <body>
+       <jsp:useBean id="enrollBean" class="enrolldb.idk" scope="session" />
+       <%   Int studentid = request.getParameter("studentid");
+            enrollBean.stu.studentid = Integer.parseInt(studentid);
+            salesBean.deleteRecord();
+       %>
+       click <a href="deletestudent1.jsp">here to go back to main menu</a><br>
+    </body>

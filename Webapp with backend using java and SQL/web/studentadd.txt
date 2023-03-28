@@ -1,0 +1,33 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*, java.util.*, enrolldb.*" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Add Student</title>
+    </head>
+    <body>
+        <h1>Adding studentinfo</h1>
+        <jsp:useBean id="enrollBean" class="enrolldb.students" scope="session" />
+        <%
+            int studentid = request.getParameter("studentid");
+            String completename   = request.getParameter("completename");
+            
+            students stu = new students();
+            od.ordernumber  = salesBean.O.ordernumber; //IDK what to do dito, but I assume that this can have something to do w/ studentid//
+            stu.completename = String.parseString(completename);
+	    stu.degreeid = String.parseString(degreeid);
+           
+            enrollBean.students.addRecord(stu);
+        %>    
+        Listing contents of the cart so far<br>
+        <% 
+            for (int i=0; i<enrollBean.stu.size(); i++) {
+                students stud = new Students();
+                stud = enrollBean.OD.viewRecord(i);  %>
+                Student ID: <%=stud.studentid%><br>
+                Student Name: <%=stud.completename%><br>
+		Degree ID: <%=stud.degreeid%><br>
+        <%  } %><br>
+        click <a href="index.jsp">here to go back to main menu</a><br>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<%-- 
+    Document   : add_student
+    Created on : 02 1, 22, 5:18:09 PM
+    Author     : ccslearner
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*, java.util.*, enrollment.* "  %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Delete Student</title>
+    </head>
+    <body>
+        <h1>Delete student info</h1>
+        <jsp:useBean id="studentsBean" class="enrollment.students" scope="session" />
+        <%
+            
+            String studentid = request.getParameter("studentid");
+            studentsBean.studentid = Integer.parseInt(studentid);
+            studentsBean.delRecord();
+        %>    
+        Student removed<br>
+        click <a href="index.html">here to go back to main menu</a><br>
+    </body>
+</html>

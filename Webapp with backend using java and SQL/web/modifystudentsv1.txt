@@ -1,0 +1,13 @@
+        <h1>Modify student info</h1>
+        <jsp:useBean id="enrollBean" class="enrollBean.enroll" scope="session" />
+        <%
+            String completename   = request.getParameter("completename");
+            String degreeid = request.getParameter("degreeid");
+	    Int    studentid = request.getParameter("studentid");
+            
+            students stu = new students();
+           stu.completename = String.parseString(completename);
+	   stu.degreeid = String.parseString(degreeid);
+	   stu.studentid = Int.parseInt(studentid);
+            salesBean.students.modRecord(stu);
+        %>  
